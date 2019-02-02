@@ -1,5 +1,8 @@
 #!/bin/bash
 set -eux
+
+jupyter serverextension enable --py jupyter-server-proxy
+
 PGDATA=${PGDATA:-/home/jovyan/srv/pgsql}
 if [ ! -d "$PGDATA" ]; then
   initdb -D "$PGDATA" --auth-host=md5 --encoding=UTF8

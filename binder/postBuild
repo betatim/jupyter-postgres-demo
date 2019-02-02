@@ -1,7 +1,8 @@
 #!/bin/bash
 set -eux
 
-#jupyter serverextension enable --py jupyter_server_proxy
+pip install jupyter-server-proxy
+jupyter serverextension enable --py jupyter_server_proxy
 
 PGDATA=${PGDATA:-/home/jovyan/srv/pgsql}
 if [ ! -d "$PGDATA" ]; then
